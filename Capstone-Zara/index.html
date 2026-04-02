@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<html lang="em">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zara</title>
+    <script src="https://kit.fontawesome.com/4013ed0f94.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <header class="header">
+        <div class="navmenu hidden">
+            <nav class="navMenuLinks">
+                <a href="#">Home</a>
+                <a href="#">Womens</a>
+                <a href="#">Mens</a>
+                <a href="#">Kids</a>
+                <a href="#">Beauty</a>
+                <a href="#">Travel</a>
+                <a href="#">Home Decor</a>
+            </nav>
+        </div>
+        <a href="#" class="icon">
+            <i class="fa-solid fa-bars"></i>
+        </a>
         <div class="logo">Zara</div>
-        <nav class="nav">
-            <a href="#">Home</a>
-            <a href="#">Womens</a>
-            <a href="#">Mens</a>
-            <a href="#">Kids</a>
-        </nav>
-        <form class="search-bar" action="#" method="get">
-            <label class="visually-hidden" for="search-input">Search Zara</label>
-            <input id="search-input" type="search" name="q" placeholder="Search Zara..." aria-label="Search Zara" />
-            <button type="submit">Search</button>
-        </form>
     </header>
-
-    <main class="content">
-        <h1>Welcome</h1>
-        <img src="images/zara.jpeg" alt="Models in jeans representing Zara clothing" height="300px" width="500px">
-
-        <button type="button">Womens</button>
-        <button type="button">Mens</button>
+    <main class="content" id="indexContent">
+        <div>
+            <form class="search-bar" action="#" method="get">
+                <label class="hidden" for="search-input">Search Zara</label>
+                <input id="search-input" type="search" name="q" placeholder="Search Zara..." aria-label="Search Zara" />
+                <button type="submit">Search</button>
+            </form>  
+        </div>
+        <div id="homeDisplayContainer">
+            <img src="images/zara.jpeg" alt="Models in jeans representing Zara clothing" id="homeDisplay">
+        </div>
+        <div id="homeNavBtns">
+            <button type="button">Womens</button>
+            <button type="button">Mens</button>
+            <button type="button">Kids</button>
+            <button type="button">Beauty</button>
+            <button type="button">Travel</button>
+            <button type="button">Home Decor</button>
+        </div>
     </main>
     <footer>
         
