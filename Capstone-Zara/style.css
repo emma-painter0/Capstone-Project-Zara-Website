@@ -8,7 +8,20 @@
 /* VARIABLES */
 :root {
     --bg-color: #fff;
+    --surface: #fff;
+    --accent: #D9D9D9;
     --text-color: #000;
+    --primary: #2C2C2C;
+    --on-background: #000;
+    --on-surface: #000;
+    --on-primary: #fff;
+    --footer-bg: #A7A5A5;
+    --on-footer: #FEF9F9;
+    --error: #B00020;
+
+    /* Button */
+    --btn-hover: #7F7F7F;
+    --btn-clicked: #606060;
 }
 
 /* UTILITY CLASSES */
@@ -72,6 +85,22 @@ img {
     width: 70vw;
 }
 
+/* GENERAL STYLES */
+button:hover {
+    cursor: pointer;
+}
+
+#homeNavBtns button {
+    background-color: var(--accent);
+    border: none;
+    height: 1.5rem;
+    width: 86px;
+}
+
+#homeNavBtns button:hover {
+    background-color: #696666;
+}
+
 /* MOBILE RESPONSIVE */
 @media (max-width: 600px) {
     .nav {
@@ -84,18 +113,15 @@ img {
     background: var(--bg-color);
     position: absolute;
     top: 5rem;
-    left: 0;
-    height: 85vh;
-    width: 400px;
-    overflow: hidden;
+    left: 40px;
+    height: 228px;
+    width: 126px;
 }
 
 .navMenuLinks {
     display: flex;
     flex-direction: column;
-    margin: 10px 40px;
     line-height: 2;
-    
 }
 
 .navMenuLinks > a {
@@ -106,6 +132,10 @@ img {
 header a.icon {
     display: block;
     color: var(--text-color);
+    font-size: 16pt;
+}
+
+.header-icons i {
     font-size: 16pt;
 }
 
@@ -153,7 +183,6 @@ header a.icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
 }
 
 .search-bar{
@@ -164,7 +193,7 @@ header a.icon {
 #search-input{
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
-    width: 300px;          /* adjust width as needed */
+    width: 95%;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
