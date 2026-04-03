@@ -44,7 +44,40 @@ main {
 footer {
     grid-area: footer;
 }
-
+footer {
+    grid-area: footer;
+    background: #b0b0b0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 36px;
+    font-size: 13px;
+    color: var(--text-color);
+    border-top: 0.5px solid #999;
+    width: 100%;
+    margin-top: 2rem;
+}
+footer a {
+    color: var(--text-color);
+    text decoration: none;
+}
+footer a: hoover { 
+    text-decoration: underline;
+}
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--text-color);
+    padding: 0;
+}
 img {
     object-fit: contain;
     object-position: center;
