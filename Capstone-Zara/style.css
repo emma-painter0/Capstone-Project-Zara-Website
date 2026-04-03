@@ -36,6 +36,18 @@ header {
     padding: 10px 40px;
 }
 
+.header-icons{
+   display:flex;
+   gap: 25px;
+   align-items: center;
+}
+
+
+.header-icons a {
+   color: var(--text-color)
+}
+
+
 main {
     grid-area: main;
     margin: 0 10%;
