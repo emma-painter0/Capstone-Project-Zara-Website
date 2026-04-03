@@ -86,6 +86,10 @@ img {
 }
 
 /* GENERAL STYLES */
+header {
+    background-color: var(--accent);
+}
+
 button:hover {
     cursor: pointer;
 }
@@ -183,6 +187,7 @@ header a.icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
 }
 
 .search-bar{
