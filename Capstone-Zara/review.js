@@ -1,21 +1,36 @@
+"use strict";
+
 const starContainer = document.getElementById('starRating');
 const stars = starContainer.querySelectorAll('span');
 let selectedRating = 0;
 
-// Handle star hover & click
-stars.forEach(star => {
-    star.addEventListener('mouseover', () => {
-        stars.forEach(s => s.style.color = '#ccc');
-        for(let i=0; i<star.dataset.value; i++) {
-            stars[i].style.color = 'gold';
+// Function to update star fill
+function updateStars() {
+    stars.forEach(star => {
+        if (parseInt(star.dataset.value) <= selectedRating) {
+            star.classList.add('filled');
+        } else {
+            star.classList.remove('filled');
         }
     });
-    star.addEventListener('mouseout', () => {
-        updateStars();
+}
+
+// Hover effect
+stars.forEach(star => {
+    star.addEventListener('mouseover', () => {
+        stars.forEach(s => s.classList.remove('filled'));
+        for(let i=0; i<star.dataset.value; i++) {
+            stars[i].classList.add('filled');
+        }
     });
+
+    star.addEventListener('mouseout', () => {
+        updateStars(); // revert to selected rating
+    });
+
     star.addEventListener('click', () => {
         selectedRating = parseInt(star.dataset.value);
-        updateStars();
+        updateStars(); // fill stars permanently
     });
 });
 

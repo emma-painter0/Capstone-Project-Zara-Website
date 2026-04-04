@@ -427,3 +427,42 @@ header a.icon {
     font-size: 1.2rem;
     color: gold;
 }
+
+/* Womens Products Display */
+.womens-container {
+    padding: 2rem;
+}
+
+.filter-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.filter-container label {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.filter-container select {
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.product-card {
+    cursor: pointer;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}

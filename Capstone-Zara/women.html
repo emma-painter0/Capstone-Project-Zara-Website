@@ -5,11 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zara</title>
     <script src="https://kit.fontawesome.com/4013ed0f94.js" crossorigin="anonymous"></script>
+    <script src="womens.js" defer></script>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
-</body>
+    <header class="header">
+        <div class="navmenu hidden">
+            <nav class="navMenuLinks">
+                <a href="index.html">Home</a>
+                <a href="women.html">Womens</a>
+                <a href="mens.html">Mens</a>
+                <a href="kids.html">Kids</a>
+                <a href="beautySection.html">Beauty</a>
+                <a href="#">Travel</a>
+                <a href="#">Home Decor</a>
+            </nav>
+        </div>
+        <a href="#" class="icon" id="hamburgerMenu">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+        <div class="logo">Zara</div>
 
+         <!--Header Icons-->
+       <div class="header-icons">
+           <a href='#'><i class="fa-regular fa-circle-user"></i></a>
+           <a href='#'><i class="fa-regular fa-heart"></i></a>
+           <a href='#'><i class="fa-solid fa-cart-shopping"></i></a>
+          
+       </div>
+
+    </header>
+    <main class="womens-container">
+        <h1>Women's Collection</h1>
+        <div class="filter-container">
+            <label for="filter">Filter by:</label>
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="dress">Dresses</option>
+                <option value="pants">Pants</option>
+                <option value="shirts">Shirts</option>
+            </select>
+        </div>
+
+        <div id="productResults" class="products-grid"></div>
+
+    </main>
+</body>
 </html>
