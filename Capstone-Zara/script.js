@@ -4,15 +4,15 @@ document.querySelector("#hamburgerMenu").addEventListener("click", event => { do
 
 document.querySelector("#womenNavBtn").addEventListener("click", event => window.location.href = "women.html");
 
-document.querySelector("#menNavBtn").addEventListener("click", event => window.location.href = "men.html");
+document.querySelector("#menNavBtn").addEventListener("click", event => window.location.href = "mens.html");
 
 document.querySelector("#kidNavBtn").addEventListener("click", event => window.location.href = "kids.html");
 
 document.querySelector("#beautyNavBtn").addEventListener("click", event => window.location.href = "beautySection.html");
 
-// document.querySelector("#travelNavBtn").addEventListener("click", event => window.location.href = ".html");
+document.querySelector("#travelNavBtn").addEventListener("click", event => window.location.href = "travel.html");
 
-// document.querySelector("#homeDecorNavBtn").addEventListener("click", event => window.location.href = ".html");
+document.querySelector("#homeDecorNavBtn").addEventListener("click", event => window.location.href = "homeDecor.html");
 
 
 // Get product from localStorage

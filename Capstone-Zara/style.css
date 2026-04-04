@@ -24,6 +24,9 @@
     --btn-clicked: #606060;
 }
 
+@supports (font-variation-settings: normal) {
+    :root { font-family: "Almarai", sans-serif; }
+}
 /* UTILITY CLASSES */
 .hidden {
     display: none !important
@@ -56,8 +59,9 @@ header {
 }
 
 
-.header-icons a {
-   color: var(--text-color)
+.header a {
+   color: var(--text-color);
+   text-decoration: none;
 }
 
 
@@ -178,8 +182,10 @@ header a.icon {
 }
 
 .product-card img{
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 193.73px;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Search Bar */
@@ -460,9 +466,4 @@ header a.icon {
 .product-card {
     cursor: pointer;
     text-align: center;
-}
-
-.product-card img {
-    width: 100%;
-    height: auto;
 }
