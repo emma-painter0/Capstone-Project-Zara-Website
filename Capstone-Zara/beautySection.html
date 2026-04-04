@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zara</title>
     <script src="https://kit.fontawesome.com/4013ed0f94.js" crossorigin="anonymous"></script>
+    <script src="beauty.js" defer></script>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -33,6 +34,19 @@
            <a href='#'><i class="fa-solid fa-cart-shopping"></i></a>   
        </div>
     </header>
+    <main class="womens-container">
+        <h1>Beauty Collection</h1>
+        <div class="filter-container">
+            <label for="filter">Filter by:</label>
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="eyes">Eyes</option>
+                <option value="lips">Lips</option>
+                <option value="face">Face</option>
+            </select>
+        </div>
+        <div id="productResults" class="products-grid"></div>
+    </main>
 </body>
 
 </html>
