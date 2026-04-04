@@ -4,7 +4,7 @@ document.querySelector("#hamburgerMenu").addEventListener("click", event => { do
 
 document.querySelector("#womenNavBtn").addEventListener("click", event => window.location.href = "women.html");
 
-document.querySelector("#menNavBtn").addEventListener("click", event => window.location.href = "men.html");
+document.querySelector("#menNavBtn").addEventListener("click", event => window.location.href = "mens.html");
 
 document.querySelector("#kidNavBtn").addEventListener("click", event => window.location.href = "kids.html");
 

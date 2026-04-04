@@ -24,6 +24,9 @@
     --btn-clicked: #606060;
 }
 
+@supports (font-variation-settings: normal) {
+    :root { font-family: "Almarai", sans-serif; }
+}
 /* UTILITY CLASSES */
 .hidden {
     display: none !important
@@ -178,8 +181,11 @@ header a.icon {
 }
 
 .product-card img{
+    width: 100%;
     max-width: 100%;
-    height: auto;
+    height: 193.73px;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Search Bar */
@@ -460,9 +466,4 @@ header a.icon {
 .product-card {
     cursor: pointer;
     text-align: center;
-}
-
-.product-card img {
-    width: 100%;
-    height: auto;
 }
