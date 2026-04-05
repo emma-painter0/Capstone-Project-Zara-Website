@@ -23,6 +23,125 @@
     --btn-hover: #7F7F7F;
     --btn-clicked: #606060;
 }
+/* SHOPPING CART */
+#cartContent {
+    padding: 2rem 0;
+}
+
+.cart-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid #ddd;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 1rem 0;
+    border-bottom: 0.5px solid #eee;
+}
+
+.cart-item-img {
+    width: 70px;
+    height: 88px;
+    background: #f5f5f5;
+    border: 0.5px solid #ddd;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.cart-item-detail {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-btn {
+    background: none;
+    border: 0.5px solid #ccc;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.qty-num {
+    font-size: 13px;
+    min-width: 16px;
+    text-align: center;
+}
+
+.cart-item-price {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.cart-summary {
+    margin-top: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #888;
+    padding: 3px 0;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 10px;
+    margin-top: 8px;
+    border-top: 0.5px solid #ddd;
+    color: var(--text-color);
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 12px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+.checkout-btn:hover {
+    background: #333;
+}
 
 @supports (font-variation-settings: normal) {
     :root { font-family: "Almarai", sans-serif; }
