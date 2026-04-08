@@ -23,6 +23,7 @@
     --btn-hover: #7F7F7F;
     --btn-clicked: #606060;
 }
+
 /* SHOPPING CART */
 #cartContent {
     padding: 2rem 0;
@@ -146,9 +147,20 @@
 @supports (font-variation-settings: normal) {
     :root { font-family: "Almarai", sans-serif; }
 }
+
 /* UTILITY CLASSES */
 .hidden {
     display: none !important
+}
+
+input:not(:placeholder-shown):invalid {
+    border: none;
+    outline: 2px solid var(--error);
+}
+
+textarea:not(:placeholder-shown):invalid {
+    border: none;
+    outline: 2px solid var(--error);
 }
 
 /* General Layout */
@@ -450,6 +462,7 @@ header a.icon {
     outline: none;
     width: 100%;
     box-sizing: border-box;
+    font-family: inherit;
 }
 
 .contact-form input:focus,
