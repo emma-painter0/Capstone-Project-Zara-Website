@@ -158,9 +158,10 @@ body {
         "header"
         "main"
         "footer";
-    grid-template-rows: 5rem auto auto;
+    grid-template-rows: 5rem auto 36px;
     grid-template-columns: 100%;
     justify-content: space-evenly;
+    min-height: 100vh;
 }
 
 header {
@@ -218,10 +219,11 @@ button:hover {
 }
 
 #homeNavBtns button {
-    background-color: var(--accent);
+    background-color: var(--accent);display: block;
     border: none;
     height: 1.5rem;
     width: 86px;
+    border-radius: 6px;
 }
 
 #homeNavBtns button:hover {
@@ -268,11 +270,13 @@ header a.icon {
 
 /* HOME LAYOUT */
 #homeNavBtns {
+    width: 100%;
     display: grid;
     grid-template-columns: 6rem 6rem;
-    justify-content: space-evenly;
-    gap: 20px 60px;
-    padding: 40px;
+    justify-content: center;
+    gap: 1rem 2rem;
+    margin: 3rem 0.5rem;
+    justify-items: center;
 }
 
 #homeDisplayContainer {
@@ -280,10 +284,7 @@ header a.icon {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-#homeDisplay {
-    padding: 4em 2vw 0.1em;
+    margin: 2rem 2vw;
 }
 
 /* Grid - Layout */
@@ -312,34 +313,28 @@ header a.icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
+    margin: 1.5rem;
+    width: 75%;
 }
 
 .search-bar{
     display: flex;
-    gap: 0.5rem;
+    width: 100%;
 }
 
 #search-input{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     font-size: 1.2rem;
-    width: 95%;
     border: 1px solid #ccc;
     border-radius: 5px;
+    width: 100%;
 }
 
-.search-bar button {
-    padding: 0.5rem 1rem;
-    font-size: 1.1rem;
-    background-color: black;  /* Zara style */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.search-bar button:hover {
-    background-color: #333;
+.fa-magnifying-glass{
+    color: #ccc;
+    position: absolute;
+    align-self: center;
+    padding-left: 3px;
 }
 
 /* Product Details Container */
@@ -594,12 +589,11 @@ footer {
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    height: 36px;
+    height: 100%;
     font-size: 13px;
     color: var(--text-color);
     border-top: 0.5px solid #999;
     width: 100%;
-    margin-top: 2rem;
 }
 footer a {
     color: var(--text-color);
