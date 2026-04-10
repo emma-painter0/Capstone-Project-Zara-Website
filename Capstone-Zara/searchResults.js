@@ -35,7 +35,10 @@ const womensProducts = [
 
 function displayProducts(list) {
     const container = document.getElementById('productResults');
-    container.innerHTML = ""; // Clear previous results
+    container.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i></div>`;
+
+    setTimeout(() => {
+        container.innerHTML = "";
 
     list.forEach(product => {
         const card = document.createElement('div');
@@ -52,6 +55,7 @@ function displayProducts(list) {
             window.location.href = "productDetails.html";
         });
     });
+}, 500);
 }
 
 displayProducts(womensProducts);
