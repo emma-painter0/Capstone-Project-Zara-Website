@@ -3,31 +3,26 @@
 
 function displayProducts(list) {
     const container = document.getElementById('productResults');
-    const noResults = document.getElementById('noResults');
+    container.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i></div>`;
 
-    container.innerHTML = "";
+    setTimeout(() => {
+        container.innerHTML = "";
 
-    if (list.length === 0) {
-        noResults.style.display = "block";
-        return;
-    } else {
-        noResults.style.display = "none";
-    }
+        list.forEach(product => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
 
-    list.forEach(product => {
-        const card = document.createElement('div');
-        card.classList.add('product-card');
-
-        card.innerHTML = `
+            card.innerHTML = `
             <img src="${product.image}" alt="${product.name}">
             <p>${product.name}</p>
             <p>${product.price}</p>
         `;
 
-        card.addEventListener('click', () => {
-            localStorage.setItem('selectedProduct', JSON.stringify(product));
-            window.location.href = "productDetails.html";
-        });
+            card.addEventListener('click', () => {
+                localStorage.setItem('selectedProduct', JSON.stringify(product));
+                window.location.href = "productDetails.html";
+            });
+        }, 500);
 
         container.appendChild(card);
     });
@@ -39,7 +34,7 @@ const query = params.get("q")?.toLowerCase() || "";
 document.getElementById('search-input').value = query;
 
 const filtered = womensProducts.filter(p =>
-  p.name.toLowerCase().includes(query)
+    p.name.toLowerCase().includes(query)
 );
 
 displayProducts(filtered);

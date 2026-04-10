@@ -659,6 +659,14 @@ header a.icon {
     gap: 0.5rem;
     align-items: center;
 }
+/* Womens.js loading screen */
+.loading-spinner {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
+    color: #555;
+}
 
 .filter-container label {
     font-weight: 500;
