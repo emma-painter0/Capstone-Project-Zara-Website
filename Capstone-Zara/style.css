@@ -5,6 +5,20 @@
     box-sizing: border-box;
 }
 
+#hamburgerMenu {
+    display: none;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+    .desktop-nav {
+        display: none;
+    }
+    #hamburgerMenu {
+        display: block;
+    }
+}
+
 /* VARIABLES */
 :root {
     --bg-color: #fff;
@@ -179,9 +193,37 @@ body {
 header {
     grid-area: header;
     display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+}
+
+.main-header {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
+    max-height: 100%;
+    flex-basis: 0;
+    flex-grow: 2;
+}
+
+.desktop-nav {
+    height: 1.5rem;
+    flex-basis: auto;
+}
+.desktop-nav-list {
+    height: 100%;
+}
+.desktop-nav-list ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    height: 100%;
+    align-items: center;
+    padding-bottom: 4px;
+    font-size: 11pt;
 }
 
 .header-icons{
@@ -189,7 +231,6 @@ header {
    gap: 25px;
    align-items: center;
 }
-
 
 .header a {
    color: var(--text-color);
@@ -240,13 +281,6 @@ button:hover {
 
 #homeNavBtns button:hover {
     background-color: #696666;
-}
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 600px) {
-    .nav {
-        display: none;
-    }
 }
 
 /* HAMBURGER MENU */
