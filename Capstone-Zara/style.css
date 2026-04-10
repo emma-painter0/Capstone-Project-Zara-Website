@@ -237,6 +237,10 @@ header {
    text-decoration: none;
 }
 
+.header-icons a:hover i {
+    font-weight: 900; 
+    color:#696666;
+}
 
 main {
     grid-area: main;
@@ -280,12 +284,12 @@ button:hover {
 }
 
 #homeNavBtns button:hover {
-    background-color: #696666;
+    background-color: #999;
 }
 
 
 .icon:hover {
-    color: #696666;
+    color: #a3a3a3;
 }
 
 
@@ -304,7 +308,7 @@ button:hover {
     left: 40px;
     height: 228px;
     width: 126px;
-    transition: all 0.10s ease;
+    transition: all 0.7s ease;
 
 }
 
@@ -371,6 +375,11 @@ header a.icon {
     height: 193.73px;
     object-fit: cover;
     object-position: center;
+}
+
+.products-grid div:hover {
+    background-color: #cecece; 
+    transform: translateY(-5px); 
 }
 
 /* Search Bar */
