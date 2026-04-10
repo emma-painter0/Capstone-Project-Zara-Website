@@ -52,17 +52,19 @@ const mensProducts = [
 
 function displayProducts(list) {
     const container = document.getElementById('productResults');
-    container.innerHTML = "";
-
-    list.forEach(product => {
-        const card = document.createElement('div');
-        card.classList.add('product-card');
-
-        card.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <p>${product.name}</p>
-            <p>${product.price}</p>
-        `;
+    container.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i></div>`;
+    
+    setTimeout(() => {
+        container.innerHTML = "";
+        list.forEach(product => {
+            const card = document.createElement('div');
+            card.classList.add('product-card');
+            card.innerHTML = `
+        
+                <img src="${product.image}" alt="${product.name}">
+                <p>${product.name}</p>
+                <p>${product.price}</p>
+            `;
 
         // click → go to product page
         card.addEventListener('click', () => {
@@ -72,6 +74,7 @@ function displayProducts(list) {
 
         container.appendChild(card);
     });
+}, 500);
 }
 
 // show all initially
