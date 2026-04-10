@@ -564,7 +564,7 @@ header a.icon {
     gap: 0.5rem;
     align-items: center;
 }
-/* Womens.js loading screen */
+/* Loading Indicator screen */
 .loading-spinner {
     grid-column: 1 / -1;
     text-align: center;
