@@ -52,9 +52,12 @@ const beautyProducts = [
 
 function displayProducts(list) {
     const container = document.getElementById('productResults');
-    container.innerHTML = "";
-
-    list.forEach(product => {
+    container.innerHTML = container.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i></div>`;
+    
+    setTimeout(() => {
+        container.innerHTML = "";
+        list.forEach(product => {
+    
         const card = document.createElement('div');
         card.classList.add('product-card');
 
@@ -72,6 +75,7 @@ function displayProducts(list) {
 
         container.appendChild(card);
     });
+ }, 500);
 }
 
 // show all initially
