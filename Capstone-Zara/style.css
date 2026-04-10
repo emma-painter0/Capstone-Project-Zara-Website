@@ -242,6 +242,12 @@ button:hover {
     background-color: #696666;
 }
 
+
+.icon:hover {
+    color: #696666;
+}
+
+
 /* MOBILE RESPONSIVE */
 @media (max-width: 600px) {
     .nav {
@@ -257,6 +263,8 @@ button:hover {
     left: 40px;
     height: 228px;
     width: 126px;
+    transition: all 0.10s ease;
+
 }
 
 .navMenuLinks {
@@ -278,6 +286,10 @@ header a.icon {
 
 .header-icons i {
     font-size: 16pt;
+}
+
+.header-icons a:hover{
+    color: #696666;
 }
 
 /* HOME LAYOUT */
