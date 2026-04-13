@@ -56,7 +56,20 @@ if (addToCartBtn && product) {
     addToCartBtn.addEventListener('click', () => {
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(product);
+
+        const existingItem = cart.find(item => item.name === product.name);
+
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                name: product.name,
+                image: product.image,
+                price: Number(product.price),
+                quantity: 1
+            });
+        }
+        console.log("ADDING PRODUCT:", product);
 
         localStorage.setItem('cart', JSON.stringify(cart));
     });
