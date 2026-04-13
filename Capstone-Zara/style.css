@@ -9,28 +9,13 @@
     display: none;
 }
 
-.fa-chevron-left {
-    display: none;
-}
-
 /* MOBILE RESPONSIVE */
 @media (max-width: 600px) {
-    main {
-        margin: 0;
-    }
     .desktop-nav {
         display: none;
     }
     #hamburgerMenu {
         display: block;
-    }
-    .fa-chevron-left {
-        display: block;
-        position: relative;
-        top: 0;
-        left: 0;
-        padding: 2px;
-        font-size: 14pt;
     }
 }
 
@@ -167,7 +152,6 @@
     font-weight: 500;
     cursor: pointer;
     letter-spacing: 0.5px;
-    transition: background-color ease-in-out 0.2s;
 }
 
 .checkout-btn:hover {
@@ -246,7 +230,6 @@ header {
    display:flex;
    gap: 25px;
    align-items: center;
-   transition: all ease-in-out 0.2s;
 }
 
 .header a {
@@ -254,14 +237,10 @@ header {
    text-decoration: none;
 }
 
-.header-icons a:hover i {
-    font-weight: 900; 
-    color:#696666;
-}
 
 main {
     grid-area: main;
-    margin: 1rem 10% 0;
+    margin: 0 10%;
 }
 
 footer {
@@ -293,31 +272,15 @@ button:hover {
 }
 
 #homeNavBtns button {
-    background-color: var(--accent);
-    display: block;
+    background-color: var(--accent);display: block;
     border: none;
     height: 1.5rem;
     width: 86px;
     border-radius: 6px;
-    transition: background-color 300ms ease;
 }
 
 #homeNavBtns button:hover {
-    background-color: #999;
-    transition: background-color 300ms ease;
-}
-
-
-.icon:hover {
-    color: #a3a3a3;
-}
-
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 600px) {
-    .nav {
-        display: none;
-    }
+    background-color: #696666;
 }
 
 /* HAMBURGER MENU */
@@ -328,7 +291,6 @@ button:hover {
     left: 40px;
     height: 228px;
     width: 126px;
-    transition: all 0.7s ease;
 }
 
 .navMenuLinks {
@@ -350,10 +312,6 @@ header a.icon {
 
 .header-icons i {
     font-size: 16pt;
-}
-
-.header-icons a:hover{
-    color: #696666;
 }
 
 /* HOME LAYOUT */
@@ -387,36 +345,13 @@ header a.icon {
     border: 1px solid #ccc;
     padding: 0.5rem;
     text-align: center;
-    object-fit: cover;
-    object-position: center;
 }
 
 .product-card img{
     width: 100%;
-    max-height: 200px;
+    height: auto;
     object-fit: cover;
     object-position: center;
-}
-
-.products-grid div {
-    transition: background-color 300ms ease;
-    animation: productHover 1s linear 0s 0 reverse;
-}
-
-.products-grid div:hover {
-    background-color: #cecece; 
-    transform: translateY(-5px);
-    transition: background-color 300ms ease;
-    animation: productHover 1s linear 0s 0 normal;
-}
-
-@keyframes productHover {
-    from {
-        transform: translateY(0px);
-    }
-    to {
-        transform: translateY(-5px);
-    }
 }
 
 /* Search Bar */
@@ -448,7 +383,7 @@ header a.icon {
     padding-left: 3px;
 }
 
-/* Make container relative so dropdown positions correctly */
+/* Search Container Dropdown */
 .search-container {
     position: relative;
     width: 75%;
@@ -491,7 +426,7 @@ header a.icon {
 
 .product-image-container img {
     width: 100%;
-    height: auto; 
+     height: auto; 
     object-fit: cover;
     border-radius: 8px;
 }
@@ -525,7 +460,7 @@ header a.icon {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: all ease-in-out 0.2s;
+    transition: background-color 0.2s;
 }
 
 #add-to-cart:hover {
@@ -602,7 +537,7 @@ header a.icon {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color ease-in-out 0.2s;
+    transition: background-color 0.2s;
 }
 
 .contact-form button:hover {
@@ -661,7 +596,7 @@ header a.icon {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color ease-in-out 0.2s;
+    transition: background-color 0.2s;
 }
 
 .review-form button:hover {
@@ -685,21 +620,16 @@ header a.icon {
     color: gold;
 }
 
-
+/* Womens Products Display */
+.womens-container {
+    padding: 2rem;
+}
 
 .filter-container {
     margin-bottom: 1.5rem;
     display: flex;
     gap: 0.5rem;
     align-items: center;
-}
-/* Loading Indicator screen */
-.loading-spinner {
-    grid-column: 1 / -1;
-    text-align: center;
-    font-size: 2rem;
-    padding: 2rem;
-    color: #555;
 }
 
 .filter-container label {
@@ -724,10 +654,6 @@ header a.icon {
     text-align: center;
 }
 
-#searchResult-content {
-    justify-items: center;
-}
-
 footer {
     grid-area: footer;
     background: #b0b0b0;
@@ -744,13 +670,11 @@ footer {
 footer a {
     color: var(--text-color);
     text-decoration: none;
-    transition: all ease-in-out 0.2s;
 }
 
 footer a:hover { 
     text-decoration: underline;
 }
-
 .footer-right {
     display: flex;
     align-items: center;
