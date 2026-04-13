@@ -752,3 +752,30 @@ footer a:hover {
 .valid {
     border: 2px solid black;
 }
+
+
+/* +/- buttons */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-selector button {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+/* +/- buttons on shopping cart */
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.qty-controls button {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}

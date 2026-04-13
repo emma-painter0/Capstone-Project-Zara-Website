@@ -35,7 +35,13 @@ function renderCart() {
 
                 <div class="cart-item-info">
                     <h3>${item.name}</h3>
-                    <p>$${price.toFixed(2)} x ${quantity}</p>
+                    <div class="qty-controls">
+                        <button class="decrease" data-index="${index}">−</button>
+                        <span>${quantity}</span>
+                        <button class="increase" data-index="${index}">+</button>
+                    </div>
+
+                    <p><strong>$${(price * quantity).toFixed(2)}</strong></p>
                     <p><strong>Total: $${(price * quantity).toFixed(2)}</strong></p>
 
                     <button class="remove-btn" data-index="${index}">Remove</button>
@@ -53,6 +59,29 @@ function renderCart() {
     subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
     totalEl.textContent = `$${subtotal.toFixed(2)}`;
 }
+
+cartItemsContainer.addEventListener("click", (e) => {
+
+    const index = e.target.dataset.index;
+
+    if (index === undefined) return;
+
+    if (e.target.classList.contains("increase")) {
+        cart[index].quantity += 1;
+    }
+
+    if (e.target.classList.contains("decrease")) {
+        cart[index].quantity -= 1;
+
+        // remove item if quantity hits 0
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+        }
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+});
 
 // Remove item
 cartItemsContainer.addEventListener("click", (e) => {
