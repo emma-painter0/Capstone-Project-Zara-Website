@@ -51,22 +51,27 @@
         </div>
     </header>
     <main class="contact-container">
+        <div>
         <i class="fa-solid fa-chevron-left" onclick="history.back()"></i>
         <h1>Contact Us</h1>
         <h2>We'll get back to you within 24 Hours!</h2>
 
         <form id="contactForm" class="contact-form">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" minlength="3" maxlength="240" placeholder="Your Name" required>
+            <input type="text" id="name" name="name" minlength="2" maxlength="240" placeholder="Your Name" required>
+            <div class="error-msg hidden" id="nameErrorMsg"></div>
 
             <label for="email">Email</label>
             <input type="email" id="email" name="email" minlength="5" placeholder="you@example.com" required>
+            <div class="error-msg hidden" id="emailErrorMsg"></div>
 
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" minlength="1" maxlength="1000" placeholder="Write your message here..." required></textarea>
+            <div class="error-msg hidden" id="messageErrorMsg"></div>
 
             <button type="submit">Send Message</button>
         </form>
+        </div>
     </main>
     <footer class="footer">
         <a href="contact.html">Contact info</a>

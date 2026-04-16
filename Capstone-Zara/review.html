@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header class="header">
         <div class="main-header">
@@ -52,27 +54,30 @@
         </div>
     </header>
     <main class="review-container">
-    <i class="fa-solid fa-chevron-left" onclick="history.back()"></i>
-    <h1>Leave a Review</h1>
-    <form id="reviewForm" class="review-form">
-      <label for="rating">Your Rating</label>
-      <div class="stars" id="starRating">
-            <span data-value="1">&#9733;</span>
-            <span data-value="2">&#9733;</span>
-            <span data-value="3">&#9733;</span>
-            <span data-value="4">&#9733;</span>
-            <span data-value="5">&#9733;</span>
+        <div>
+        <h1>Leave a Review</h1>
+        <form id="reviewForm" class="review-form">
+            <label for="starRating">Your Rating</label>
+            <div class="stars" id="starRating">
+                <span data-value="1">&#9733;</span>
+                <span data-value="2">&#9733;</span>
+                <span data-value="3">&#9733;</span>
+                <span data-value="4">&#9733;</span>
+                <span data-value="5">&#9733;</span>
+            </div>
+            <div class="error-msg" id="rating-error-msg"></div>
+
+            <label for="review">Your Review</label>
+            <textarea id="review" name="review" rows="5" placeholder="Write your review..." required></textarea>
+            <div class="error-msg" id ="review-error-msg"></div>
+
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <h2>Previous Reviews</h2>
+        <div id="reviewsList" class="reviews-list"></div>
         </div>
-
-      <label for="review">Your Review</label>
-      <textarea id="review" name="review" rows="5" placeholder="Write your review..." required></textarea>
-
-      <button type="submit">Submit Review</button>
-    </form>
-
-    <h2>Previous Reviews</h2>
-    <div id="reviewsList" class="reviews-list"></div>
-  </main>
+    </main>
     <footer class="footer">
         <a href="contact.html">Contact info</a>
         <a href="review.html">Leave a Review</a>

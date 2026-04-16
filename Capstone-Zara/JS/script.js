@@ -5,10 +5,10 @@ async function loadProducts() {
     try {
         const response = await fetch("./JS/products.json");
         let products = await response.json();
-        
+
         // add products to local
         localStorage.setItem('products', JSON.stringify(products));
-    } catch(error) {
+    } catch (error) {
         console.log(error);
     }
 }
@@ -16,19 +16,6 @@ async function loadProducts() {
 window.addEventListener("DOMContentLoaded", loadProducts);
 
 document.querySelector("#hamburgerMenu").addEventListener("click", event => { document.querySelector(".navmenu").classList.toggle("hidden") });
-
-window.addEventListener("DOMContentLoaded", (event) => {
-
-    if (event.target.location.href.includes("index.html")) {
-        document.querySelector("#womenNavBtn").addEventListener("click", () => window.location.href = "women.html");
-        document.querySelector("#menNavBtn").addEventListener("click", () => window.location.href = "mens.html");
-        document.querySelector("#kidNavBtn").addEventListener("click", () => window.location.href = "kids.html");
-        document.querySelector("#beautyNavBtn").addEventListener("click", () => window.location.href = "beautySection.html");
-        document.querySelector("#travelNavBtn").addEventListener("click", () => window.location.href = "travel.html");
-        document.querySelector("#homeDecorNavBtn").addEventListener("click", () => window.location.href = "homeDecor.html");
-
-    }
-});
 
 
 // Get product from localStorage
@@ -65,7 +52,6 @@ if (addToCartBtn && product) {
 document.addEventListener('DOMContentLoaded', () => {
 
     let products = localStorage.getItem('products');
-    console.log(products);
     products = JSON.parse(products);
 
     const searchInput = document.getElementById('search-input');
@@ -76,30 +62,119 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();
 
-        suggestionsBox.innerHTML = "";
+        suggestionsBox.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i></div>`;
 
-        if (query === "") return;
+        setTimeout(() => {
+            suggestionsBox.innerHTML = "";
 
-        const filtered = products.filter(p =>
-            p.name.toLowerCase().includes(query)
-        );
+            if (query === "") return;
 
-        if (filtered.length === 0) {
-            suggestionsBox.innerHTML = `<div class="suggestion-item">No results found</div>`;
-            return;
-        }
+            const filtered = products.filter(p =>
+                p.name.toLowerCase().includes(query)
+            );
 
-        filtered.slice(0, 5).forEach(product => {
-            const div = document.createElement('div');
-            div.classList.add('suggestion-item');
-            div.textContent = product.name;
+            if (filtered.length === 0) {
+                suggestionsBox.innerHTML = `<div class="suggestion-item">No results found</div>`;
+                return;
+            }
 
-            div.addEventListener('click', () => {
-                window.location.href = `searchResult.html?q=${product.name}`;
+            filtered.slice(0, 5).forEach(product => {
+                const div = document.createElement('div');
+                div.classList.add('suggestion-item');
+                div.textContent = product.name;
+
+                div.addEventListener('click', () => {
+                    window.location.href = `searchResult.html?q=${product.name}`;
+                });
+
+                suggestionsBox.appendChild(div);
             });
 
-            suggestionsBox.appendChild(div);
-        });
+        }, 500);
+
+
     });
 
 });
+
+
+window.addEventListener("DOMContentLoaded", (event) => {
+    if (event.target.location.href.includes("contact.html")) {
+        const main = document.querySelector(".contact-container");
+        const container = document.querySelector("main > div");
+
+        const nameInput = document.getElementById("name");
+        const nameInputErrorMsg = document.getElementById("nameErrorMsg");
+        const emailInput = document.getElementById("email");
+        const emailInputErrorMsg = document.getElementById("emailErrorMsg");
+        const msgInput = document.getElementById("message");
+        const msgInputErrorMsg = document.getElementById("messageErrorMsg")
+
+        document.querySelector("button").addEventListener("click", () => {
+            if (nameInput.value.trim().length < 2) {
+                nameInputErrorMsg.innerHTML = `<p>Name must be at least 2 characters.</p>`;
+                nameInputErrorMsg.classList.remove("hidden");
+            }
+            else {
+                nameInputErrorMsg.classList.add("hidden");
+            }
+
+            if (emailInput.value.trim().length < 5) {
+                emailInputErrorMsg.innerHTML = `<p>Email is required.</p>`;
+                emailInputErrorMsg.classList.remove("hidden");
+            }
+            else {
+                emailInputErrorMsg.classList.add("hidden");
+            }
+
+            if (msgInput.value.trim().length < 1) {
+                msgInputErrorMsg.innerHTML = `<p>Message is required.</p>`;
+                msgInputErrorMsg.classList.remove("hidden");
+            }
+            else {
+                msgInputErrorMsg.classList.add("hidden");
+            }
+
+            main.removeChild(container);
+            const spinner = document.createElement("div");
+            spinner.classList.add("loading-spinner");
+            spinner.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+            main.appendChild(spinner);
+
+            const confirmation = document.createElement("div");
+            confirmation.classList.add("submission-confirmation");
+
+            let icon = document.createElement("div");
+            icon.innerHTML = `<i class="fa-regular fa-circle-check"></i>`;
+
+            confirmation.appendChild(icon);
+
+            let successMessageContainer = document.createElement("div");
+            let header1 = document.createElement("h1");
+            header1.innerHTML = "<h1>Success!</h1>";
+            successMessageContainer.appendChild(header1);
+
+            let message = document.createElement("p");
+            message.innerHTML = "<p>Thank you for your feedback!</p>";
+            successMessageContainer.appendChild(message);
+
+            confirmation.appendChild(successMessageContainer);
+            
+
+            setTimeout(() => {
+                main.removeChild(spinner);
+
+                main.appendChild(confirmation);
+
+            }, 500);
+
+        });
+    }
+});
+
+
+// Real-time validation
+// Descriptive error messages
+// Submission confirmation
+// Disable submission button when input is invalid
+// Indicate required fields
