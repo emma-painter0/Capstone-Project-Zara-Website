@@ -114,3 +114,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+window.addEventListener("DOMContentLoaded", (event) => {
+    if (event.target.location.href.includes("contact.html")) {
+        const main = document.querySelector(".contact-container");
+        const container = document.querySelector("main > div");
+
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const msgInput = document.getElementById("message");
+
+        document.querySelector("button").addEventListener("click", () => {
+            if (nameInput.classList.contains("valid") && emailInput.classList.contains("valid") && msgInput.classList.contains("valid")) {
+                main.removeChild(container);
+                const spinner = document.createElement("div");
+                spinner.classList.add("loading-spinner");
+                spinner.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+                main.appendChild(spinner);
+
+                const confirmation = document.createElement("div");
+                confirmation.classList.add("submission-confirmation");
+
+                let icon = document.createElement("div");
+                icon.innerHTML = `<i class="fa-regular fa-circle-check"></i>`;
+
+                confirmation.appendChild(icon);
+
+                let successMessageContainer = document.createElement("div");
+                let header1 = document.createElement("h1");
+                header1.innerHTML = "<h1>Success!</h1>";
+                successMessageContainer.appendChild(header1);
+
+                let message = document.createElement("p");
+                message.innerHTML = "<p>Thank you for your feedback!</p>";
+                successMessageContainer.appendChild(message);
+
+                confirmation.appendChild(successMessageContainer);
+
+
+                setTimeout(() => {
+                    main.removeChild(spinner);
+
+                    main.appendChild(confirmation);
+
+                }, 500);
+            }
+
+        });
+    }
+});
