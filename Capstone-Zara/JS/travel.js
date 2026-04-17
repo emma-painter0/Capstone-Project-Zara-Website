@@ -4,31 +4,31 @@ const travelProducts = [
     {
         name: "Polyester Travel Bag",
         image: "images/travelbag.jpg",
-        price: "$60.00",
+        price: 60.00,
         category: "bag",
     },
     {
         name: "Canvas Travel Bag",
         image: "images/graytravelbag.jpg",
-        price: "$100.00",
+        price: 100.00,
         category: "bag",
     },
     {
         name: "Duffel Bag",
         image: "images/duffelbag.jpg",
-        price: "$50.00",
+        price: 50.00,
         category: "bag",
     },
     {
         name: "Bifold Wallet",
         image: "images/bifoldwallet.jpeg",
-        price: "$30.00",
+        price: 30.00,
         category: "wallet",
     },
     {
         name: "Zip Wallet",
         image: "images/zipwallet.jpeg",
-        price: "$25.00",
+        price: 25.00,
         category: "wallet",
     }
 ];

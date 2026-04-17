@@ -4,46 +4,46 @@ const beautyProducts = [
     {
         name: "Black Eyeliner",
         image: "images/eyeliner.jpg",
-        price: "$12.99",
+        price: 12.99,
         category: "eyes"
     },
     {
         name: "Jelly Blush - BubbleGum ",
         image: "images/jellyBlush.jpg",
-        price: "$15.99",
+        price: 15.99,
         category: "face"
     },
     {
         name: "Lip Stain - Mauve",
         image: "images/lipstain.jpg",
-        price: "$12.99",
+        price: 12.99,
         category: "lips"
     },
     {
         name: "Lip Gloss - Peaches ",
         image: "images/lipgloss.jpg",
-        price: "$10.99",
+        price: 10.99,
         category: "lips"
 
     },
     {
         name: "Liquid Bronzer- Dark",
         image: "images/liquidBronzer.jpg",
-        price: "$19.99",
+        price: 19.99,
         category: "face"
 
     },
     {
         name: "Liquid Eyeshadow - Pink",
         image: "images/liquidEyeshadow.jpg",
-        price: "$24.99",
+        price: 24.99,
         category: "eyes"
 
     },
     {
         name: "Liquid Highlighter - Golden",
         image: "images/liquidHighlighter.jpg",
-        price: "$19.99",
+        price: 19.99,
         category: "face"
 
     }
