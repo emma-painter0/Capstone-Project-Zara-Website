@@ -35,7 +35,9 @@ function displayProducts(list) {
 const params = new URLSearchParams(window.location.search);
 const query = params.get("q")?.toLowerCase() || "";
 
-document.getElementById('search-input').value = query;
+document.getElementById('searchResultsQuery').innerHTML = 'Results for "' + query +'"';
+
+document.getElementById('search-input').value = "";
 
 const filtered = products.filter(p =>
     p.name.toLowerCase().includes(query)

@@ -53,9 +53,11 @@
         </div>
     </header>
     <main id="searchResult-content">
+        <h1 id="searchResultsQuery">Results for</h1>
         <i class="fa-solid fa-chevron-left" onclick="history.back()"></i>
         <div class="search-container">
             <!-- 🔹 Search bar (stays on results page too) -->
+             <i class="fa-solid fa-magnifying-glass"></i>
             <form class="search-bar" action="searchResult.html" method="get">
                 <label class="hidden" for="search-input">Search Zara</label>
                 <input id="search-input" type="search" name="q" placeholder="Search Zara..." />
@@ -64,7 +66,7 @@
         </div>
 
         <!-- 🔹 Results -->
-        <div id="productResults"></div>
+        <div class="product-details" id="productResults"></div>
 
         <!-- 🔹 Empty state -->
         <p id="noResults" style="display:none;">No results found</p>

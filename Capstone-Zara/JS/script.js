@@ -5,10 +5,10 @@ async function loadProducts() {
     try {
         const response = await fetch("./JS/products.json");
         let products = await response.json();
-        
+
         // add products to local
         localStorage.setItem('products', JSON.stringify(products));
-    } catch(error) {
+    } catch (error) {
         console.log(error);
     }
 }
@@ -16,19 +16,6 @@ async function loadProducts() {
 window.addEventListener("DOMContentLoaded", loadProducts);
 
 document.querySelector("#hamburgerMenu").addEventListener("click", event => { document.querySelector(".navmenu").classList.toggle("hidden") });
-
-window.addEventListener("DOMContentLoaded", (event) => {
-
-    if (event.target.location.href.includes("index.html")) {
-        document.querySelector("#womenNavBtn").addEventListener("click", () => window.location.href = "women.html");
-        document.querySelector("#menNavBtn").addEventListener("click", () => window.location.href = "mens.html");
-        document.querySelector("#kidNavBtn").addEventListener("click", () => window.location.href = "kids.html");
-        document.querySelector("#beautyNavBtn").addEventListener("click", () => window.location.href = "beautySection.html");
-        document.querySelector("#travelNavBtn").addEventListener("click", () => window.location.href = "travel.html");
-        document.querySelector("#homeDecorNavBtn").addEventListener("click", () => window.location.href = "homeDecor.html");
-
-    }
-});
 
 
 // Get product from localStorage
@@ -82,7 +69,6 @@ if (addToCartBtn && product) {
 document.addEventListener('DOMContentLoaded', () => {
 
     let products = localStorage.getItem('products');
-    console.log(products);
     products = JSON.parse(products);
 
     const searchInput = document.getElementById('search-input');
@@ -93,30 +79,38 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();
 
-        suggestionsBox.innerHTML = "";
+        suggestionsBox.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i></div>`;
 
-        if (query === "") return;
+        setTimeout(() => {
+            suggestionsBox.innerHTML = "";
 
-        const filtered = products.filter(p =>
-            p.name.toLowerCase().includes(query)
-        );
+            if (query === "") return;
 
-        if (filtered.length === 0) {
-            suggestionsBox.innerHTML = `<div class="suggestion-item">No results found</div>`;
-            return;
-        }
+            const filtered = products.filter(p =>
+                p.name.toLowerCase().includes(query)
+            );
 
-        filtered.slice(0, 5).forEach(product => {
-            const div = document.createElement('div');
-            div.classList.add('suggestion-item');
-            div.textContent = product.name;
+            if (filtered.length === 0) {
+                suggestionsBox.innerHTML = `<div class="suggestion-item">No results found</div>`;
+                return;
+            }
 
-            div.addEventListener('click', () => {
-                window.location.href = `searchResult.html?q=${product.name}`;
+            filtered.slice(0, 5).forEach(product => {
+                const div = document.createElement('div');
+                div.classList.add('suggestion-item');
+                div.textContent = product.name;
+
+                div.addEventListener('click', () => {
+                    window.location.href = `searchResult.html?q=${product.name}`;
+                });
+
+                suggestionsBox.appendChild(div);
             });
 
-            suggestionsBox.appendChild(div);
-        });
+        }, 500);
+
+
     });
 
 });
+
