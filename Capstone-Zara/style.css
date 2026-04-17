@@ -183,12 +183,8 @@
     display: none !important
 }
 
-input:not(:placeholder-shown):invalid {
-    border: none;
-    outline: 2px solid var(--error);
-}
-
-textarea:not(:placeholder-shown):invalid {
+input:not(:placeholder-shown):invalid:not(#name):not(#email),
+textarea:not(:placeholder-shown):invalid:not(#message) {
     border: none;
     outline: 2px solid var(--error);
 }
