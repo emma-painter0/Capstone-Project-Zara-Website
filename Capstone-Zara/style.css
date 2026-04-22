@@ -32,26 +32,59 @@
     }
 }
 
-/* VARIABLES */
+/* LIGHT MODE COLOR VARIABLES */
 :root {
     --bg-color: #fff;
-    --surface: #fff;
     --accent: #D9D9D9;
     --text-color: #000;
     --primary: #2C2C2C;
     --on-background: #000;
-    --on-surface: #000;
     --on-primary: #fff;
-    --footer-bg: #A7A5A5;
+    --footer-bg: #b0b0b0;
     --on-footer: #FEF9F9;
     --error: #B00020;
     --brand-primary: #548296;
     --brand-primary-hover: #324e5a;
     --on-brand: #fff;
+    --header-bg: #D9D9D9;
+    --footer-border: #999;
+    --font-tertiary: #333;
+
+    /* Surface */
+    --surface-bg: #f9f9f9;
+    --surface-text-color: #888;
 
     /* Button */
     --btn-hover: #7F7F7F;
     --btn-clicked: #606060;
+
+    /* input */
+    --input-bg: #fff;
+    --input-border: #ccc;
+    --input-placeholder: #D9D9D9;
+    --input-invalid-bg: #fff5f5;
+    --input-valid-bg: #f5fff8;
+
+    --suggestions-box-border: #ddd;
+    --suggestion-item-hover: #f2f2f2;
+    
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    transition: background-color 300ms ease, color 300ms ease;
+}
+
+input {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+textarea {
+    background-color: var(--input-bg);
+    color: var(--text-color);
 }
 
 /* SHOPPING CART */
@@ -131,7 +164,7 @@
 
 .cart-summary {
     margin-top: 1.5rem;
-    background: #f9f9f9;
+    background: var(--surface-bg);
     border-radius: 8px;
     padding: 1rem 1.25rem;
 }
@@ -140,7 +173,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 12px;
-    color: #888;
+    color: var(--surface-text-color);
     padding: 3px 0;
 }
 
@@ -260,6 +293,7 @@ header {
 main {
     grid-area: main;
     margin: 0 10%;
+    padding: 1.5rem 0;
 }
 
 footer {
@@ -286,7 +320,7 @@ img {
 
 /* GENERAL STYLES */
 header {
-    background-color: var(--accent);
+    background-color: var(--header-bg);
 }
 
 #indexContent button, #indexContent button[type="submit"],
@@ -337,6 +371,7 @@ header {
     left: 40px;
     height: 228px;
     width: 126px;
+    z-index: 65;
 }
 
 .navMenuLinks {
@@ -388,7 +423,7 @@ header a.icon {
 }
 
 .product-card{
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-bg);
     padding: 0.5rem;
     text-align: center;
 }
@@ -398,6 +433,8 @@ header a.icon {
     height: auto;
     object-fit: cover;
     object-position: center;
+    max-height: 14em;
+    max-width: 14em;
 }
 
 /* Search Bar */
@@ -415,15 +452,17 @@ header a.icon {
 }
 
 #search-input{
+    background-color: var(--input-bg);
+    color: var(--text-color);
     padding: 0.5rem 1.5rem;
     font-size: 1.2rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border);
     border-radius: 5px;
     width: 100%;
 }
 
 .fa-magnifying-glass{
-    color: var(--on-background);
+    color: var(--input-placeholder);
     position: absolute;
     align-self: center;
     margin: 3px;
@@ -436,13 +475,14 @@ header a.icon {
 }
 
 .suggestions-box {
+    background-color: var(--input-bg);
+    color: var(--text-color);
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background: white;
-    border: 1px solid #ddd;
-    z-index: 9999;
+    border: 1px solid var(--suggestions-box-border);
+    z-index: 60;
 }
 
 .suggestion-item {
@@ -451,7 +491,7 @@ header a.icon {
 }
 
 .suggestion-item:hover {
-    background: #f2f2f2;
+    background: var(--suggestion-item-hover);
 }
 
 /* Product Details Container */
@@ -494,7 +534,7 @@ header a.icon {
 
 .product-info p {
     font-size: 1.2rem;
-    color: #333;
+    color: var(--font-tertiary);
 }
 
 /* Add to Cart button style */
@@ -556,12 +596,27 @@ header a.icon {
 .contact-form textarea {
     padding: 0.75rem;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border);
     border-radius: 5px;
     outline: none;
     width: 100%;
     box-sizing: border-box;
     font-family: inherit;
+    background-color: var(--input-bg);
+}
+
+.contact-form input.invalid,
+.contact-form textarea.invalid {
+    border-color: #c0392b !important;
+    background-color: var(--input-invalid-bg);
+    outline-color: #c0392b !important;
+}
+
+.contact-form input.valid,
+.contact-form textarea.valid {
+    border-color: #27ae60 !important;
+    background-color: var(--input-valid-bg);
+    outline-color: #27ae60 !important;
 }
 
 .contact-form input:focus,
@@ -672,7 +727,7 @@ header a.icon {
 .filter-container select {
     padding: 0.4rem 0.6rem;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--input-border);
 }
 
 .products-grid {
@@ -688,7 +743,7 @@ header a.icon {
 
 footer {
     grid-area: footer;
-    background: #b0b0b0;
+    background-color: var(--footer-bg);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -696,7 +751,7 @@ footer {
     height: 100%;
     font-size: 13px;
     color: var(--text-color);
-    border-top: 0.5px solid #999;
+    border-top: 0.5px solid var(--footer-border);
     width: 100%;
 }
 footer a {
@@ -728,7 +783,7 @@ footer a:hover {
     max-width: 500px;
     margin: auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
+    font-family: inherit;
 }
 
 .shipping-container h1 {
@@ -836,4 +891,48 @@ textarea.invalid {
     font-size: 38pt;
     margin: .5rem;
     color: darkgreen;
+}
+
+#searchResult-content .search-container {
+    justify-self: center;
+}
+
+select {
+    background-color: var(--input-bg);
+    border: solid var(--input-border);
+    color: var(--text-color);
+}
+
+/* DARK MODE */
+body.dark {
+    --bg-color: #3D3C3C;
+    --surface: #606060;
+    --accent: #606060;
+    --text-color: #fff;
+    --on-background: #D9D9D9;
+    --on-surface: #D9D9D9;
+    --header-bg: #606060;
+    --footer-bg: #606060;
+    --on-footer: #D9D9D9;
+    --footer-border: #606060;
+    --font-tertiary: #777;
+
+    /* Surface */
+    --surface-bg: #555353;
+    --surface-text-color: #D9D9D9;
+
+    /* input */
+    --input-bg: #2C2C2C;
+    --input-border: #2C2C2C;
+    --input-placeholder: #fff;
+    --input-invalid-bg: #300e0b;
+    --input-valid-bg: #0a2b18;
+
+    --suggestions-box-border: #2C2C2C;
+    --suggestion-item-hover: #373737;
+
+    --brand-primary: #476e7f;
+    --brand-primary-hover: #3f6170;
+
+    transition: background-color 300ms ease, color 300ms ease;
 }
