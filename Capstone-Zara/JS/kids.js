@@ -4,39 +4,39 @@ const kidsProducts = [
     {
         name: "Girls Dress",
         image: "images/girlsDress.jpeg",
-        price: "$15.99",
+        price: 15.99,
         category: "girls"
     },
     {
         name: "Girls Cheetah Pants",
         image: "images/girlsCheetahPants.jpeg",
-        price: "$24.99",
+        price: 24.99,
         category: "girls"
     },
     {
         name: "Girls Heart Shirt",
         image: "images/girlsheartShirt.jpeg",
-        price: "$12.99",
+        price: 12.99,
         category: "girls"
     },
     {
         name: "Boys Cargo Pants",
         image: "images/boysCargoPants.jpeg",
-        price: "$24.99",
+        price: 24.99,
         category: "boys"
 
     },
     {
         name: "Boys Denim Shirt",
         image: "images/boysDenimShirt.jpeg",
-        price: "$19.99",
+        price: 19.99,
         category: "boys"
 
     },
     {
         name: "Boys Pullover And Jeans Set",
         image: "images/boysSet.jpeg",
-        price: "$39.99",
+        price: 39.99,
         category: "boys"
 
     }

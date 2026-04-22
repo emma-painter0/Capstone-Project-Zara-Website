@@ -4,46 +4,46 @@ const mensProducts = [
     {
         name: "Denim Collared Shirt",
         image: "images/denimCollaredShirt.jpeg",
-        price: "$29.99",
+        price: 29.99,
         category: "shirts"
     },
     {
         name: "Graphic T-Shirt",
         image: "images/graphicTee.jpeg",
-        price: "$19.99",
+        price: 19.99,
         category: "shirts"
     },
     {
         name: "Khaki Cargo Pants",
         image: "images/khakiCargos.jpeg",
-        price: "$49.99",
+        price: 49.99,
         category: "pants"
     },
     {
         name: "Linen Pants",
         image: "images/linenPantsM.jpeg",
-        price: "$39.99",
+        price: 39.99,
         category: "pants"
 
     },
     {
         name: "Beige Mens Blazer",
         image: "images/blazer.jpeg",
-        price: "$79.99",
+        price: 79.99,
         category: "jackets"
 
     },
     {
         name: "Pink Collared Shirt",
         image: "images/mensCollaredShirt.jpeg",
-        price: "$59.99",
+        price: 59.99,
         category: "shirts"
 
     },
     {
         name: "Striped Linen Collared Shirt",
         image: "images/menShirt1.jpeg",
-        price: "$49.99",
+        price: 49.99,
         category: "shirts"
 
     }

@@ -6,8 +6,10 @@ async function loadProducts() {
         const response = await fetch("./JS/products.json");
         let products = await response.json();
 
+
         // add products to local
         localStorage.setItem('products', JSON.stringify(products));
+    } catch (error) {
     } catch (error) {
         console.log(error);
     }
@@ -40,12 +42,29 @@ if (product) {
 const addToCartBtn = document.getElementById('add-to-cart');
 
 if (addToCartBtn && product) {
-    addToCartBtn.addEventListener('click', () => {
+    addToCartBtn.addEventListener("click", () => {
 
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(product);
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        localStorage.setItem('cart', JSON.stringify(cart));
+        const existingItem = cart.find(item => item.id === product.id);
+
+        if (existingItem) {
+            existingItem.quantity += quantity;
+        } else {
+            cart.push({
+                id: product.id,
+                name: product.name,
+                image: product.image,
+                price: Number(product.price),
+                quantity: quantity
+            });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // reset quantity after adding
+        quantity = 1;
+        qtyEl.textContent = quantity;
     });
 }
 
@@ -62,6 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();
 
+        suggestionsBox.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i></div>`;
+
+        setTimeout(() => {
+            suggestionsBox.innerHTML = "";
         suggestionsBox.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i></div>`;
 
         setTimeout(() => {
@@ -97,84 +120,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-
 window.addEventListener("DOMContentLoaded", (event) => {
     if (event.target.location.href.includes("contact.html")) {
         const main = document.querySelector(".contact-container");
         const container = document.querySelector("main > div");
 
         const nameInput = document.getElementById("name");
-        const nameInputErrorMsg = document.getElementById("nameErrorMsg");
         const emailInput = document.getElementById("email");
-        const emailInputErrorMsg = document.getElementById("emailErrorMsg");
         const msgInput = document.getElementById("message");
-        const msgInputErrorMsg = document.getElementById("messageErrorMsg")
 
         document.querySelector("button").addEventListener("click", () => {
-            if (nameInput.value.trim().length < 2) {
-                nameInputErrorMsg.innerHTML = `<p>Name must be at least 2 characters.</p>`;
-                nameInputErrorMsg.classList.remove("hidden");
+            if (nameInput.classList.contains("valid") && emailInput.classList.contains("valid") && msgInput.classList.contains("valid")) {
+                main.removeChild(container);
+                const spinner = document.createElement("div");
+                spinner.classList.add("loading-spinner");
+                spinner.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+                main.appendChild(spinner);
+
+                const confirmation = document.createElement("div");
+                confirmation.classList.add("submission-confirmation");
+
+                let icon = document.createElement("div");
+                icon.innerHTML = `<i class="fa-regular fa-circle-check"></i>`;
+
+                confirmation.appendChild(icon);
+
+                let successMessageContainer = document.createElement("div");
+                let header1 = document.createElement("h1");
+                header1.innerHTML = "<h1>Success!</h1>";
+                successMessageContainer.appendChild(header1);
+
+                let message = document.createElement("p");
+                message.innerHTML = "<p>Thank you for your feedback!</p>";
+                successMessageContainer.appendChild(message);
+
+                confirmation.appendChild(successMessageContainer);
+
+
+                setTimeout(() => {
+                    main.removeChild(spinner);
+
+                    main.appendChild(confirmation);
+
+                }, 500);
             }
-            else {
-                nameInputErrorMsg.classList.add("hidden");
-            }
-
-            if (emailInput.value.trim().length < 5) {
-                emailInputErrorMsg.innerHTML = `<p>Email is required.</p>`;
-                emailInputErrorMsg.classList.remove("hidden");
-            }
-            else {
-                emailInputErrorMsg.classList.add("hidden");
-            }
-
-            if (msgInput.value.trim().length < 1) {
-                msgInputErrorMsg.innerHTML = `<p>Message is required.</p>`;
-                msgInputErrorMsg.classList.remove("hidden");
-            }
-            else {
-                msgInputErrorMsg.classList.add("hidden");
-            }
-
-            main.removeChild(container);
-            const spinner = document.createElement("div");
-            spinner.classList.add("loading-spinner");
-            spinner.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
-            main.appendChild(spinner);
-
-            const confirmation = document.createElement("div");
-            confirmation.classList.add("submission-confirmation");
-
-            let icon = document.createElement("div");
-            icon.innerHTML = `<i class="fa-regular fa-circle-check"></i>`;
-
-            confirmation.appendChild(icon);
-
-            let successMessageContainer = document.createElement("div");
-            let header1 = document.createElement("h1");
-            header1.innerHTML = "<h1>Success!</h1>";
-            successMessageContainer.appendChild(header1);
-
-            let message = document.createElement("p");
-            message.innerHTML = "<p>Thank you for your feedback!</p>";
-            successMessageContainer.appendChild(message);
-
-            confirmation.appendChild(successMessageContainer);
-            
-
-            setTimeout(() => {
-                main.removeChild(spinner);
-
-                main.appendChild(confirmation);
-
-            }, 500);
 
         });
     }
 });
-
-
-// Real-time validation
-// Descriptive error messages
-// Submission confirmation
-// Disable submission button when input is invalid
-// Indicate required fields
