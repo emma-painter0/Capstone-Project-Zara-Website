@@ -1,10 +1,17 @@
 "use strict";
 
+let themePreference = sessionStorage.getItem("themePreference");
+
+window.addEventListener("DOMContentLoaded", () => {
+    if (themePreference == "dark") document.body.classList.add("dark");
+});
+
 // load products from products.json
 async function loadProducts() {
     try {
         const response = await fetch("./JS/products.json");
         let products = await response.json();
+
 
         // add products to local
         localStorage.setItem('products', JSON.stringify(products));
@@ -16,55 +23,6 @@ async function loadProducts() {
 window.addEventListener("DOMContentLoaded", loadProducts);
 
 document.querySelector("#hamburgerMenu").addEventListener("click", event => { document.querySelector(".navmenu").classList.toggle("hidden") });
-
-
-// Get product from localStorage
-const product = JSON.parse(localStorage.getItem('selectedProduct'));
-
-// Display product info
-if (product) {
-
-    const img = document.getElementById('product-image');
-    const name = document.getElementById('product-name');
-    const price = document.getElementById('product-price');
-    const desc = document.getElementById('product-description');
-
-    if (img) img.src = product.image;
-    if (name) name.textContent = product.name;
-    if (price) price.textContent = product.price;
-    if (desc) desc.textContent = product.description;
-
-}
-
-// Add to cart functionality
-const addToCartBtn = document.getElementById('add-to-cart');
-
-if (addToCartBtn && product) {
-    addToCartBtn.addEventListener("click", () => {
-
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-        const existingItem = cart.find(item => item.id === product.id);
-
-        if (existingItem) {
-            existingItem.quantity += quantity;
-        } else {
-            cart.push({
-                id: product.id,
-                name: product.name,
-                image: product.image,
-                price: Number(product.price),
-                quantity: quantity
-            });
-        }
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        // reset quantity after adding
-        quantity = 1;
-        qtyEl.textContent = quantity;
-    });
-}
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -82,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         suggestionsBox.innerHTML = `<div class="loading-spinner"><i class="fa-solid fa-spinner fa-spin"></i></div>`;
 
         setTimeout(() => {
+
             suggestionsBox.innerHTML = "";
 
             if (query === "") return;
@@ -113,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
 
 window.addEventListener("DOMContentLoaded", (event) => {
     if (event.target.location.href.includes("contact.html")) {
@@ -160,5 +120,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
             }
 
         });
+    }
+});
+
+const themeToggle = document.getElementById("darkModeToggle");
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        sessionStorage.setItem("themePreference", "dark");
+        themeToggle.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+    }
+    else {
+        sessionStorage.removeItem("themePreference");
+        themeToggle.innerHTML = `<i class="fa-solid fa-moon"></i>`;
     }
 });
