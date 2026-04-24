@@ -73,6 +73,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("featuredProducts");
+    if (!container) return;
+
+    let products = JSON.parse(localStorage.getItem("products")) || [];
+
+    if (products.length === 0) {
+        console.log("No products found in localStorage");
+        return;
+    }
+
+    const featured = products.slice(0, 6);
+
+    featured.forEach(product => {
+        const card = document.createElement("div");
+        card.classList.add("product-card");
+
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>$${product.price}</p>
+        `;
+
+        card.addEventListener("click", () => {
+            localStorage.setItem("selectedProduct", JSON.stringify(product));
+            window.location.href = "productDetails.html";
+        });
+
+        container.appendChild(card);
+    });
+});
+
 
 window.addEventListener("DOMContentLoaded", (event) => {
     if (event.target.location.href.includes("contact.html")) {
