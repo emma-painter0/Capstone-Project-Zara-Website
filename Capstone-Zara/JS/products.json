@@ -1,0 +1,276 @@
+[
+    {
+        "name": "Blue Mini Dress",
+        "image": "images/blueDress.jpeg",
+        "price": 39.99,
+        "category": "dress",
+        "department": "womens"
+    },
+    {
+        "name": "Long Pleated Red Dress",
+        "image": "images/reddress2.jpeg",
+        "price": 59.99,
+        "category": "dress",
+        "department": "womens"
+    },
+    {
+        "name": "Blue Pullover Sweatshirt",
+        "image": "images/bluePulloverW.jpeg",
+        "price": 29.99,
+        "category": "shirts",
+        "department": "womens"
+    },
+    {
+        "name": "Cream Dress Pants",
+        "image": "images/dressPantsW.jpeg",
+        "price": 48.99,
+        "category": "pants",
+        "department": "womens"
+    },
+    {
+        "name": "Green Short Sleeve T-shirt",
+        "image": "images/greenTeeW.jpeg",
+        "price": 19.99,
+        "category": "shirts",
+        "department": "womens"
+    },
+    {
+        "name": "Light Wash Jeans",
+        "image": "images/lightwashJeansW.jpeg",
+        "price": 59.99,
+        "category": "pants",
+        "department": "womens"
+    },
+    {
+        "name": "Ripped Jeans",
+        "image": "images/womensJeans1.jpeg",
+        "price": 49.99,
+        "category": "pants",
+        "department": "womens"
+    },
+    {
+        "name": "Denim Collared Shirt",
+        "image": "images/denimCollaredShirt.jpeg",
+        "price": 29.99,
+        "category": "shirts",
+        "department": "mens"
+    },
+    {
+        "name": "Graphic T-Shirt",
+        "image": "images/graphicTee.jpeg",
+        "price": 19.99,
+        "category": "shirts",
+        "department": "mens"
+    },
+    {
+        "name": "Khaki Cargo Pants",
+        "image": "images/khakiCargos.jpeg",
+        "price": 49.99,
+        "category": "pants",
+        "department": "mens"
+    },
+    {
+        "name": "Linen Pants",
+        "image": "images/linenPantsM.jpeg",
+        "price": 39.99,
+        "category": "pants",
+        "department": "mens"
+
+    },
+    {
+        "name": "Beige Mens Blazer",
+        "image": "images/blazer.jpeg",
+        "price": 79.99,
+        "category": "jackets",
+        "department": "mens"
+    },
+    {
+        "name": "Pink Collared Shirt",
+        "image": "images/mensCollaredShirt.jpeg",
+        "price": 59.99,
+        "category": "shirts",
+        "department": "mens"
+    },
+    {
+        "name": "Striped Linen Collared Shirt",
+        "image": "images/menShirt1.jpeg",
+        "price": 49.99,
+        "category": "shirts",
+        "department": "mens"
+    },
+    {
+        "name": "Girls Dress",
+        "image": "images/girlsDress.jpeg",
+        "price": 15.99,
+        "category": "girls",
+        "department": "kids"
+    },
+    {
+        "name": "Girls Cheetah Pants",
+        "image": "images/girlsCheetahPants.jpeg",
+        "price": 24.99,
+        "category": "girls",
+        "department": "kids"
+    },
+    {
+        "name": "Girls Heart Shirt",
+        "image": "images/girlsheartShirt.jpeg",
+        "price": 12.99,
+        "category": "girls",
+        "department": "kids"
+    },
+    {
+        "name": "Boys Cargo Pants",
+        "image": "images/boysCargoPants.jpeg",
+        "price": 24.99,
+        "category": "boys",
+        "department": "kids"
+    },
+    {
+        "name": "Boys Denim Shirt",
+        "image": "images/boysDenimShirt.jpeg",
+        "price": 19.99,
+        "category": "boys",
+        "department": "kids"
+    },
+    {
+        "name": "Boys Pullover And Jeans Set",
+        "image": "images/boysSet.jpeg",
+        "price": 39.99,
+        "category": "boys",
+        "department": "kids"
+    },
+    {
+        "name": "Black Eyeliner",
+        "image": "images/eyeliner.jpg",
+        "price": 12.99,
+        "category": "eyes",
+        "department": "beauty"
+    },
+    {
+        "name": "Jelly Blush - BubbleGum ",
+        "image": "images/jellyBlush.jpg",
+        "price": 15.99,
+        "category": "face",
+        "department": "beauty"
+    },
+    {
+        "name": "Lip Stain - Mauve",
+        "image": "images/lipstain.jpg",
+        "price": 12.99,
+        "category": "lips",
+        "department": "beauty"
+    },
+    {
+        "name": "Lip Gloss - Peaches ",
+        "image": "images/lipgloss.jpg",
+        "price": 10.99,
+        "category": "lips",
+        "department": "beauty"
+    },
+    {
+        "name": "Liquid Bronzer- Dark",
+        "image": "images/liquidBronzer.jpg",
+        "price": 19.99,
+        "category": "face",
+        "department": "beauty"
+    },
+    {
+        "name": "Liquid Eyeshadow - Pink",
+        "image": "images/liquidEyeshadow.jpg",
+        "price": 24.99,
+        "category": "eyes",
+        "department": "beauty"
+    },
+    {
+        "name": "Liquid Highlighter - Golden",
+        "image": "images/liquidHighlighter.jpg",
+        "price": 19.99,
+        "category": "face",
+        "department": "beauty"
+    },
+    {
+        "name": "Polyester Travel Bag",
+        "image": "images/travelbag.jpg",
+        "price": 60.00,
+        "category": "bag",
+        "department": "travel"
+    },
+    {
+        "name": "Canvas Travel Bag",
+        "image": "images/graytravelbag.jpg",
+        "price": 100.00,
+        "category": "bag",
+        "department": "travel"
+    },
+    {
+        "name": "Duffel Bag",
+        "image": "images/duffelbag.jpg",
+        "price": 50.00,
+        "category": "bag",
+        "department": "travel"
+    },
+    {
+        "name": "Bifold Wallet",
+        "image": "images/bifoldwallet.jpeg",
+        "price": 30.00,
+        "category": "wallet",
+        "department": "travel"
+    },
+    {
+        "name": "Zip Wallet",
+        "image": "images/zipwallet.jpeg",
+        "price": 25.00,
+        "category": "wallet",
+        "department": "travel"
+    },
+    {
+        "name": "Round Rug",
+        "image": "images/roundrug.jpeg",
+        "price": 100.00,
+        "category": "rug",
+        "department": "homeDecor"
+    },
+    {
+        "name": "Rectangle Area Rug",
+        "image": "images/rectanglerug.jpeg",
+        "price": 110.00,
+        "category": "rug",
+        "department": "homeDecor"
+    },
+    {
+        "name": "Artificial Potted Rubber Plant",
+        "image": "images/rubberplant.jpeg",
+        "price": 15.00,
+        "category": "plant",
+        "department": "homeDecor"
+    },
+    {
+        "name": "Artifical Potted Tree",
+        "image": "images/tropicaltree.jpeg",
+        "price": 31.00,
+        "category": "plant",
+        "department": "homeDecor"
+    },
+    {
+        "name": "Artifical Potted Philodendron",
+        "image": "images/philodendron.jpeg",
+        "price": 18.00,
+        "category": "plant",
+        "department": "homeDecor"
+    },
+    {
+        "name": "Square Embroidered Throw Pillow",
+        "image": "images/embroideredthrowpillow.jpg",
+        "price": 22.00,
+        "category": "pillow",
+        "department": "homeDecor"
+    },
+    {
+        "name": "Embroidered Lumbar Pillow",
+        "image": "images/embroideredlumbarpillow.jpeg",
+        "price": 23.00,
+        "category": "pillow",
+        "department": "homeDecor"
+    }
+]

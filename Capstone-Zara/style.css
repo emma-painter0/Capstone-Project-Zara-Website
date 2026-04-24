@@ -224,6 +224,11 @@ textarea {
     font-size: 0.9rem;
 }
 
+.error-msg {
+    color: var(--error);
+    font-size: 0.9rem;
+}
+
 input:not(:placeholder-shown):invalid:not(#name):not(#email),
 textarea:not(:placeholder-shown):invalid:not(#message) {
     border: none;
@@ -289,15 +294,16 @@ header {
 }
 
 .header a {
-    color: var(--text-color);
-    text-decoration: none;
+   color: var(--text-color);
+   text-decoration: none;
 }
+
 
 main {
     grid-area: main;
     margin: 0 10%;
     padding: 1.5rem 0;
-    min-width: 0; /* prevents overflow in grid */
+    min-width: 0;
 }
 
 footer {
@@ -316,7 +322,7 @@ img {
     justify-items: center;
 }
 
-#homeDisplay,
+#homeDisplay, 
 #homeDisplay img {
     align-self: center;
     width: 100vw;
@@ -346,6 +352,8 @@ header {
     cursor: pointer;
 }
 
+
+
 #homeNavBtns button {
     background-color: var(--accent);
     display: block;
@@ -354,6 +362,7 @@ header {
     width: 5.375rem; 
     border-radius: 0.375rem;
 }
+
 
 .icon:hover {
     color: #a3a3a3;

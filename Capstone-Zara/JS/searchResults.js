@@ -1,5 +1,7 @@
 "use strict";
 
+let products = localStorage.getItem("products");
+products = JSON.parse(products);
 
 function displayProducts(list) {
     const container = document.getElementById('productResults');
@@ -22,18 +24,22 @@ function displayProducts(list) {
                 localStorage.setItem('selectedProduct', JSON.stringify(product));
                 window.location.href = "productDetails.html";
             });
-        }, 500);
 
         container.appendChild(card);
+        }, 500);
+
+        
     });
 }
 
 const params = new URLSearchParams(window.location.search);
 const query = params.get("q")?.toLowerCase() || "";
 
-document.getElementById('search-input').value = query;
+document.getElementById('searchResultsQuery').innerHTML = 'Results for "' + query +'"';
 
-const filtered = womensProducts.filter(p =>
+document.getElementById('search-input').value = "";
+
+const filtered = products.filter(p =>
     p.name.toLowerCase().includes(query)
 );
 
