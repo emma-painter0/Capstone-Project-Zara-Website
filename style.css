@@ -488,8 +488,6 @@ header a.icon {
 
 .product-card{
     border: 1px solid var(--accent);
-}
-.product-card {
     border: 1px solid var(--input-bg);
     padding: 0.5rem;
     text-align: center;
@@ -874,7 +872,6 @@ footer a:hover {
 @media (max-width: 767px) {
     #shippingForm-inputs {
         flex-direction: column;
-        gap: 0.75rem; 
     }
 
     
