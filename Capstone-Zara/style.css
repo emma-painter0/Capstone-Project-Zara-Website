@@ -27,7 +27,7 @@
         position: relative;
         top: 0;
         left: 0;
-        padding:2px;
+        padding: 2px;
         font-size: 14pt;
     }
 }
@@ -67,6 +67,14 @@
 
     --suggestions-box-border: #ddd;
     --suggestion-item-hover: #f2f2f2;
+
+    /* category cards */
+    --womens-category-card-bg: #d6a4a4;
+    --mens-category-card-bg: #7da2a9;
+    --kids-category-card-bg: #f2c94c;
+    --beauty-category-card-bg: #c08497;
+    --travel-category-card-bg: #8fb9a8;
+    --home-decor-category-card-bg: #c9b6e4;
     
 }
 
@@ -340,6 +348,7 @@ header {
 .product-details-container #add-to-cart:hover {
     background-color: var(--brand-primary-hover);
     cursor: pointer;
+    transition: background-color 300ms ease-in-out;
 }
 
 
@@ -449,12 +458,14 @@ header a.icon {
 }
 
 @media (min-width: 769px) {
-    .products-grid {
+    .featured-section > .products-grid {
         display: flex;
-        overflow-x: auto;
         gap: 1rem;
         padding-bottom: 1rem;
         scroll-snap-type: x mandatory;
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
     .product-card {
@@ -463,8 +474,12 @@ header a.icon {
     }
 }
 
+.featured-section > .products-grid::-webkit-scrollbar {
+    display: none;
+}
+
 .product-card{
-    border: 1px solid var(--input-bg);
+    border: 1px solid var(--accent);
     padding: 0.5rem;
     text-align: center;
 }
@@ -476,6 +491,7 @@ header a.icon {
     object-position: center;
     max-height: 14em;
     max-width: 14em;
+    aspect-ratio: 1 / 1;
 }
 
 /* Search Bar */
@@ -810,9 +826,6 @@ footer a:hover {
 /* Shipping Form */
 
 .shipping-container {
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
     font-family: inherit;
 }
 
@@ -821,11 +834,34 @@ footer a:hover {
     margin-bottom: 20px;
 }
 
-.shipping-form {
+#shippingForm-inputs {
+    display: flex;
+}
+
+#shippingForm-inputs > div {
+    flex: auto;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0.4rem;
 }
+
+/* MOBILE  */
+@media (max-width: 767px) {
+    #shippingForm-inputs {
+        flex-direction: column;
+    }
+
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+    #shippingForm-inputs {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 10rem;
+    }
+}
+
 
 .shipping-form input,
 .shipping-form select {
@@ -849,10 +885,12 @@ footer a:hover {
     border: none;
     cursor: pointer;
     font-size: 14px;
+    transition: background-color 300ms ease-in-out;
 }
 
 .shipping-form button:hover {
     background-color: #333;
+    transition: background-color 300ms ease-in-out;
 }
 
 /* error styles */
@@ -927,7 +965,14 @@ textarea.invalid {
 .home-categories {
     display: grid;
     gap: 1.5rem;
-    padding: 2rem 5%;
+    padding: 2rem 0;
+    margin: 0 5%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.home-categories::-webkit-scrollbar {
+    display: none;
 }
 
 /* MOBILE  */
@@ -949,12 +994,12 @@ textarea.invalid {
     }
 
     .category-card {
-        flex: 0 0 220px; 
+        flex: 0 0 13.75rem; 
     }
 }
 
 .category-card {
-    min-height: 180px;
+    min-height: 11.25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -970,8 +1015,8 @@ textarea.invalid {
 }
 
 .category-card a {
-    background: white;
-    color: black;
+    background: var(--bg-color);
+    color: var(--on-background);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     text-decoration: none;
@@ -985,12 +1030,12 @@ textarea.invalid {
 }
 
 /* COLORS */
-.women { background: #d6a4a4; }
-.men { background: #7da2a9; }
-.kids { background: #f2c94c; }
-.beauty { background: #c08497; }
-.travel { background: #8fb9a8; }
-.home-decor { background: #c9b6e4; }
+.women { background: var(--womens-category-card-bg); }
+.men { background: var(--mens-category-card-bg); }
+.kids { background: var(--kids-category-card-bg); }
+.beauty { background: var(--beauty-category-card-bg); }
+.travel { background: var(--travel-category-card-bg); }
+.home-decor { background: var(--home-decor-category-card-bg); }
 
 
 .featured-section {
@@ -1072,5 +1117,26 @@ body.dark {
     --brand-primary: #476e7f;
     --brand-primary-hover: #3f6170;
 
+    /* category cards */
+    --womens-category-card-bg: #d1a9a9;
+    --mens-category-card-bg: #819fa5;
+    --kids-category-card-bg: #e1c15d;
+    --beauty-category-card-bg: #ba8a99;
+    --travel-category-card-bg: #93b5a7;
+    --home-decor-category-card-bg: #cabbdf;
+
     transition: background-color 300ms ease, color 300ms ease;
+}
+
+button.increase, button.decrease {
+    border-radius: 100%;
+    border-width: 0px;
+    background-color: var(--brand-primary);
+    color: var(--on-brand);
+    transition: background-color 300ms ease-in-out;
+}
+
+button.increase:hover, button.decrease:hover {
+    background-color: var(--brand-primary-hover);
+    transition: background-color 300ms ease-in-out;
 }
