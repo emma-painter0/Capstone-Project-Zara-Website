@@ -488,7 +488,6 @@ header a.icon {
 
 .product-card{
     border: 1px solid var(--accent);
-    border: 1px solid var(--input-bg);
     padding: 0.5rem;
     text-align: center;
 }
